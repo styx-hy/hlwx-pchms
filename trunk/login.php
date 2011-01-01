@@ -14,6 +14,7 @@
 	foreach ($result as $elem) {
 		print $elem."<br>";
 	}
+	print sizeof($_POST);
   ?>
 </body>
 </html>
