@@ -10,6 +10,10 @@
   $insert = "something";
   print "hello{$insert}world"."<br>";
   print $_POST['username']."<br>";
+	$result = $_POST;
+	foreach ($result as $elem) {
+		print $elem."<br>";
+	}
   ?>
 </body>
 </html>
