@@ -11,13 +11,15 @@
 <script language="javascript" id="getdata" type="text/javascript">
 function get_data() {
 	$("#list").html("");
-	$.getJSON("returndata.php", {name: "test", age: 20}, function callback(json) {
+	$.getJSON("returndata.json", {name: "test", age: 20}, function callback(json) {
 		$.each(json, function(i) {
 			$("#list").append("<li>name:"+json[i].name+"&nbsp; Age:"+json[i].age+"</li>")
 		})
 	})};
 </script>
-<input id="Button1" type="button" value="获取数据" onclick="getData()" />
+<form method="post">
+<input id="Button1" type="submit" value="getdata" onclick="getData()" />
+</form>
 <ul id="list"></ul>
 </body>
 </html>

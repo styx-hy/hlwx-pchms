@@ -13,5 +13,8 @@
 <?php
 $arr = array(1, 2, 3, 4, 5, 6, 7);
 $json_obj = json_encode($arr);
-
+$filename = "returndata.json";
+$fp = fopen($filename, "w");
+fwrite($fp, $json_obj);
+fclose($fp);
 ?>
