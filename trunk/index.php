@@ -1,43 +1,42 @@
-<!--<html>
-<head><title>Tour Information</title></head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/base.css" type="text/css">
+<title>PCHMS-HLWX</title>
+</head>
+
 <body>
-<h2>Mission Information</h2>
-<form action="formaction.php">
-  <table width="100%">
-    <tr><td>Ship Name:</td><td><input type="text" name="ship" /></td></tr>
-    <tr><td>Trip Date:</td><td><input type="text" name="tripdate" /></td></tr>
-    <tr><td colspan="2">Mission Goals:</td></tr>
+<div class="general" id="container">
+  <h1>PCHMS-HLWX</h1>
+  <table width="700" border="0">
     <tr>
-      <td><input type="checkbox" name="exploration" value="yes" />
-               Exploration</td>
-      <td><input type="checkbox" name="contact" value="yes" />
-               Contact</td>
+      <td width="400" height="89"><img src="/fox.png" alt="" width="400" height="400" /></td>
+      <td id="user" align="left" valign="top"><div class="panel" id="panel">
+          <form name="form1" action="action.php" method="post" action="">
+          <table width="100" border="0">
+            <tr>
+              <td>用户名</td>
+            </tr>
+            <tr>
+              <td><input type="text" name="username" id="username5" /></td>
+            </tr>
+            <tr>
+              <td>密码</td>
+            </tr>
+            <tr>
+              <td><label for="passwd2"></label>
+                <input type="password" name="passwd" id="passwd2" /></td>
+            </tr>
+            <tr>
+              <td height="23"><input type="submit" name="submit" id="submit" value="Submit"></td>
+            </tr>
+          </table>
+          </form>
+          <p>&nbsp; </p>
+        </div></td>
     </tr>
-    <tr>
-      <td valign="top">Crew species:  </td>
-      <td>
-        <select name="crew" multiple="multiple">
-           <option value="xebrax">Xebrax</option>
-           <option value="snertal">Snertal</option>
-           <option value="gosny">Gosny</option>
-        </select>
-      </td>
-    </tr>
-    <tr><td colspan="2" align="center"><input type="submit" /></td></tr>
   </table>
-</form>
+</div>
 </body>
 </html>
--->
-
-<html>
-  <head><title>register & login</title></head>
-  <body>
-    <form action="login.php" method="POST" name="hi">
-      <tr><td>username</td><td><input type="text" name="username"/></td></tr>
-      <tr><td>password</td><td><input type="password" name="passwd"/></td></tr>
-      <tr><td><input type="submit" /></td></tr>
-    </form>
-  </body>
-</html>
-
