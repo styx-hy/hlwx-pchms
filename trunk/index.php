@@ -4,10 +4,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="/base.css" type="text/css">
+<script language="javascript" src="/jquery.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+             alert("Congratulations");
+         });
+</script>
+
 <title>PCHMS-HLWX</title>
 </head>
 
 <body>
+<script type="text/javascript">
+document.write("helloworld");
+</script>
 <div class="general" id="container">
   <h1>PCHMS-HLWX</h1>
   <table width="700" border="0">
@@ -41,3 +51,5 @@
 </div>
 </body>
 </html>
+
+
