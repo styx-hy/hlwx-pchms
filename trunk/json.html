@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>json</title>
+    <script language="javascript" type="text/javascript" src="/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="/jquery.flot.js"></script>
+
+  </head>
+  <body>
+    <div id="placeholder" style="width:600px;height:300px;">
+    </div>
+
+    <script language="javascript" type="text/javascript">
+    $(function() {
+	$.plot($("#placeholder"), <?php $arr = array(array(array(1,1),array(2,2))); echo json_encode($arr); ?>);
+    });
+    </script>
+  </body>
+</html>
+
+

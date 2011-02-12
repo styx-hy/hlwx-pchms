@@ -1,7 +1,14 @@
 <?php
-//$arr = $_REQUEST;
-$arr = array(1=>1, 2=>2, 3=>3, 4=>4);
-$json_obj = json_encode($arr);
-//print_r($arr);
-echo $json_obj;
+class JsonObj {
+    var $data;
+    function setData($foo) {
+        $this->data = $foo;
+    }
+}
+
+$obj = new JsonObj;
+$arr = array(array(array(1, 1), array(2, 2), array(3, 3)));
+$obj->setData(array(array(1, 1), array(2, 2), array(3, 3)));
+echo json_encode($obj);
+
 ?>

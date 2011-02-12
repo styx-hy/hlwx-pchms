@@ -1,0 +1,49 @@
+<html>
+<head><title></title>
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+    var points = [[10,10], [20][20], [30,30], [100,100]];
+var cache = {};
+for (var i = 0, len = points.length; i < len; i++) {
+    for (var j = 0, len2 = points[i].length; j < len2; j++) {
+	var key = points[i][j][0] + '*' + points[i][j][1];
+	if (cache[key]) {
+	    cache[key]++;
+	} else {
+	    cache[key] = 1;
+	}
+    }
+}
+
+var oData = [];
+for (var m in cache) {
+    if (m == '0*0') continue;
+    var x = parseInt(m.split('*')[0], 10);
+    var y = parseInt(m.split('*')[1], 0);
+    oData.push([x, y, cache[m]]);
+}
+
+oData.sort(function(a, b) {
+    return a[2] - b[2];
+});
+var max = oData[oData.length - 1][2];
+var pi2 = Math.PI * 2;
+var threshold = this.__points_min_threshold * max;
+var pr = (Math.log(245) - 1)/245;
+for (var i = 0, len = oData.length; i < len; i++) {
+    if (oData[i][2] 0 ? 0 : 1);
+    var q = parseInt(Math.log(oData[i][2]) / Math.log(max) * 255);
+    var r = parseInt(128 * Math.sin((1 / 256 * q - 0.5) * Math.PI) + 200);
+    var g = parseInt(128 * Math.sin((1 / 128 * q - 0.5) * Math.PI) + 127);
+    var b = parseInt(256 * Math.sin((1 / 256 * q + 0.5) * Math.PI));
+    var alp = (0.92 * q +20) / 255;
+    var radgrad = this.context.createRadialGradient(oData[i][0], oData[i][1], 1, oData[i][0], oData[i][1], 8);
+    radgrad.addColorStop(0, 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alp + ')');
+    radgrad.addColorStop(1, 'rgba(' + r + ', ' + g + ', ' + b + ', 0)');
+    this.context.fillStyle = radgrad;
+    this.context.fillRect(oData[i][0] - 8, oData[i][1] - 8, 16, 16);
+
+</script>
+</body>
+</html>
