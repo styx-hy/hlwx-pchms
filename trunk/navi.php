@@ -63,6 +63,7 @@ session_start();
             <li><a href="javascript:void(0);" id="scatter"> Click Scatterring </a></li>
             <li><a href="javascript:void(0);" id="heatmap"> Heat Map </a></li>
             <li><a href="javascript:void(0);" id="enable_tooltip"> Enable Tooltip </a></li>
+	    <li><a href="javascript:void(0);" id="download"> Download </a></li>
           </ul>
         </div>
         <div id="holder">
