@@ -30,14 +30,15 @@ mysql_select_db('pchms', $con);
  * Query data from database
  * ========================
  */
-$query = "SELECT * FROM (SELECT span*86400000 as stamp, times FROM (SELECT CEIL(UNIX_TIMESTAMP(dtstamp)/86400.0) span, COUNT(dtstamp) times FROM mousetable WHERE userid='$_SESSION[userid]' GROUP BY span) x ) y WHERE stamp<=UNIX_TIMESTAMP(date_add(curdate(), interval -16 day))*1000 and stamp >= UNIX_TIMESTAMP(date_add(curdate(),interval -17 day))*1000";
+
+$query = "SELECT * FROM (SELECT span*86400000 as stamp, times FROM (SELECT CEIL(UNIX_TIMESTAMP(dtstamp)/86400.0) span, COUNT(dtstamp) times FROM mousetable WHERE userid='$_SESSION[userid]' GROUP BY span) x ) y WHERE stamp<=UNIX_TIMESTAMP(date_add(curdate(), interval -'$_GET[time_span_s]' day))*1000 and stamp >= UNIX_TIMESTAMP(date_add(curdate(),interval -'$_GET[time_span_e]' day))*1000";
 $result1 = mysql_query($query, $con);
 
 while ($tmp = mysql_fetch_array($result1, MYSQL_NUM)) {
     $final[] = $tmp;
 }
 
-$query = "SELECT * FROM (SELECT span*86400000 as stamp, times FROM (SELECT CEIL(UNIX_TIMESTAMP(dtstamp)/86400.0) span, COUNT(dtstamp) times FROM keytable WHERE userid=('$_SESSION[userid]') GROUP BY span) x ) y WHERE stamp<=UNIX_TIMESTAMP(date_add(curdate(), interval -16 day))*1000 and stamp >= UNIX_TIMESTAMP(date_add(curdate(),interval -17 day))*1000";
+$query = "SELECT * FROM (SELECT span*86400000 as stamp, times FROM (SELECT CEIL(UNIX_TIMESTAMP(dtstamp)/86400.0) span, COUNT(dtstamp) times FROM keytable WHERE userid=('$_SESSION[userid]') GROUP BY span) x ) y WHERE stamp<=UNIX_TIMESTAMP(date_add(curdate(), interval -'$_GET[time_span_s]' day))*1000 and stamp >= UNIX_TIMESTAMP(date_add(curdate(),interval -'$_GET[time_span_e]' day))*1000";
 
 $result2 = mysql_query($query, $con);
 
